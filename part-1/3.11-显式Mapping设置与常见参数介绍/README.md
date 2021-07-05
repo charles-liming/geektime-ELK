@@ -54,9 +54,11 @@ POST /users/_search
 }
 
 结论： 无法查询，报错为查询的字段没有index。
+```
 
 
 #3、设定Null_value，当我们有些字段为空值时，我们需要在mapping 中定义 "NULL", 这个看起来是字符串，但是在写进去真实数据时，需要显示的设置为null，返回的就是null，
+```
 
 DELETE users
 PUT users
@@ -103,10 +105,11 @@ GET users/_search
   }
 
 }
+```
 
+### 设置 Copy to
+```
 
-
-#设置 Copy to
 DELETE users
 PUT users
 {
@@ -142,9 +145,11 @@ POST users/_search
     }
   }
 }
+```
 
+### 数组类型
+```
 
-#数组类型
 PUT users/_doc/1
 {
   "name":"onebird",
