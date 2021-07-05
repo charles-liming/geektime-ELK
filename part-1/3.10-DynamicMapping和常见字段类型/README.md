@@ -9,7 +9,7 @@ Mapping中的字段一旦设定后，禁止直接修改。因为倒排索引生�
 
 
 对新增字段的处理,需要看dynamic 设置为下边的那个值
-true
+true.  #再不显示设置的情况下，默认为true
 false
 strict
 
