@@ -1,7 +1,9 @@
 # 显式Mapping设置与常见参数介绍
 ## 课程Demos
+
+### 1、put 指定mapping格式
 ```
-put 指定mapping格式
+
 
 PUT index—name
 {
@@ -11,10 +13,9 @@ PUT index—name
 }
 
 ```
-
+### 2、给不需要index的字段设置 index 为 false，
 
 ```
-#设置 index 为 false
 DELETE users
 PUT users
 {
@@ -34,6 +35,7 @@ PUT users
     }
 }
 
+# 写入一份带 mobile的数据
 PUT users/_doc/1
 {
   "firstName":"Ruan",
@@ -41,6 +43,7 @@ PUT users/_doc/1
   "mobile": "12345678"
 }
 
+# 格局mobile 字段匹配，查询数据，
 POST /users/_search
 {
   "query": {
@@ -50,10 +53,10 @@ POST /users/_search
   }
 }
 
+结论： 无法查询，报错为查询的字段没有index。
 
 
-
-#设定Null_value
+#3、设定Null_value，当我们有些字段为空值时，我们需要在mapping 中定义 "NULL", 这个看起来是字符串，但是在写进去真实数据时，需要显示的设置为null，返回的就是null，
 
 DELETE users
 PUT users
@@ -75,6 +78,7 @@ PUT users
     }
 }
 
+### 显示指定我们的字段为null
 PUT users/_doc/1
 {
   "firstName":"Ruan",
@@ -82,14 +86,14 @@ PUT users/_doc/1
   "mobile": null
 }
 
-
+###。没有对mobile 字段写入数据。
 PUT users/_doc/2
 {
   "firstName":"Ruan2",
   "lastName": "Yiming2"
-
 }
 
+### 查询 mobile 为 null 的文档
 GET users/_search
 {
   "query": {
