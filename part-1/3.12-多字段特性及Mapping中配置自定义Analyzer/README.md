@@ -1,7 +1,7 @@
 # 多字段特性及Mapping中配置自定义Analyzer
 ## 课程Demo
 
-在es 中，我们为索引设置mapping 的时候，可以为每个字段设置filed属性，比如自定义分词器等。
+在es 中，我们为索引设置mapping 的时候，可以为每个字段设置filed属性，比如能否被索引，以及自定义分词器等。
 ```
 PUT logs/_doc/1
 {"level":"DEBUG"}
