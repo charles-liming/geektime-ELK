@@ -8,7 +8,7 @@ Mapping中的字段一旦设定后，禁止直接修改。因为倒排索引生�
 - 定义倒排索引相关的配置（是否被索引？采用的Analyzer）
 
 
-对新增字段的处理
+对新增字段的处理,需要看dynamic 设置为下边的那个值
 true
 false
 strict
@@ -36,12 +36,22 @@ GET mapping_test/_mapping
 #Delete index
 DELETE mapping_test
 
-#dynamic mapping，推断字段的类型
+#dynamic mapping，推断字段的类型，动态识别的时候，加双引号的都为字符串，会自动转为text 并且给一个keyword的filed标识。
 PUT mapping_test/_doc/1
 {
     "uid" : "123",
     "isVip" : false,
     "isAdmin": "true",
+    "age":19,
+    "heigh":180
+}
+
+
+PUT mapping_test/_doc/1
+{
+    "uid" : "123",
+    "isVip" : "false",
+    "isAdmin": true,
     "age":19,
     "heigh":180
 }
