@@ -170,7 +170,7 @@ POST users/_search
 	}
 }
 
-GET users/_mapping
+GET users/_mapping.  # 查到我们的数组其实还是text类型
 
 ```
 
