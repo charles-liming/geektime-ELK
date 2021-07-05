@@ -57,7 +57,7 @@ POST /users/_search
 ```
 
 
-#3、设定Null_value，当我们有些字段为空值时，我们需要在mapping 中定义 "NULL", 这个看起来是字符串，但是在写进去真实数据时，需要显示的设置为null，返回的就是null，
+### 3、设定Null_value，当我们有些字段为空值时，我们需要在mapping 中定义 "NULL", 这个看起来是字符串，但是在写进去真实数据时，需要显示的设置为null，返回的就是null，
 ```
 
 DELETE users
@@ -107,7 +107,7 @@ GET users/_search
 }
 ```
 
-### 设置 Copy to
+### 4、设置 Copy to
 ```
 
 DELETE users
@@ -147,7 +147,7 @@ POST users/_search
 }
 ```
 
-### 数组类型
+### 5、数组类型
 ```
 
 PUT users/_doc/1
