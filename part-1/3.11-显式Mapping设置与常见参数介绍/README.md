@@ -109,6 +109,7 @@ GET users/_search
 ```
 
 ### 4、设置 Copy to
+在mapping 指定某个字段的数据copy 到一个新的字段上，那么mapping 会自动的设置这个copy to 的字段的数据类型，新字段不会出现在"_source".
 ```
 
 DELETE users
