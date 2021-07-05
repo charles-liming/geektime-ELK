@@ -1,7 +1,19 @@
 # 显式Mapping设置与常见参数介绍
 ## 课程Demos
 ```
+put 指定mapping格式
 
+PUT index—name
+{
+    "mappings" : {
+    ...
+    }
+}
+
+```
+
+
+```
 #设置 index 为 false
 DELETE users
 PUT users
